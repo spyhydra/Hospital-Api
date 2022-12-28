@@ -1,5 +1,5 @@
 const User = require('../models/doctor');
-
+const jwt=require('jsonwebtoken')
 
 
 module.exports.index=function(req,res){
@@ -59,3 +59,29 @@ module.exports.login= async function(req,res){
 
 
 }
+//................. function for creating jwt ..............//
+
+module.exports.createSession= async function(req,res){
+        try {
+                let user= await User.findOne({email:req.body.email});
+                 if(!user || user.password != req.body.password){
+                      return res.json(422,{
+                        message:"invalid user name and password"
+                      })  
+                 }
+
+                  return res.json(200,{
+                        message:'sign in successfully',
+                        data:{
+                                token: jwt.sign(user.toJSON(),'qwertyuiomqsdertyhj',{expiresIn:'200000'})
+                        }
+                  })
+
+
+}
+         catch (error) {
+                console.log(error);
+        }
+}
+        
+

@@ -9,7 +9,7 @@ router.post('/register',usersController.register)
 
 router.get('/login',usersController.login)
 
-
+router.post('/create-session',usersController.createSession)
 
 
 

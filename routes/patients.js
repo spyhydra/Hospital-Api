@@ -1,4 +1,4 @@
-const usersController=require('../controller/doctors_controllers')
+const patientsController=require('../controller/patients_controller')
 
 const express=require('express')
 
@@ -6,4 +6,8 @@ const express=require('express')
 
 const router = express.Router();
 
-module.exports=router
+
+router.post('/register',patientsController.register)
+
+module.exports=router;
+
