@@ -5,9 +5,11 @@ const port=80;
 const db=require('./config/mongoose');
 
 
+
 app.use(express.urlencoded());
 
-app.use('/', require('./routes/users'));
+
+app.use('/', require('./routes'))
 
 
 
