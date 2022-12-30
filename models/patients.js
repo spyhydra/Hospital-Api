@@ -21,18 +21,21 @@ const userSchema= new mongoose.Schema({
         require:true
     },
 
-    status:{
+    gender:{
         type:String,
         require:true
     },
-    date:{
-        type:Date,
-        default: Date.now
-
-    }
-   
-
     
+    age:{
+        type:Number,
+        require:true
+    },
+
+    reports:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Report'
+    }]
+
 },{
     timestamps:true
 })

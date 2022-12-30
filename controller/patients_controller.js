@@ -6,7 +6,7 @@ const Patients = require('../models/patients');
 module.exports.register= async function(req,res){
     console.log("enter in patients");
 
-    const {name,doctor,phone,status}=req.body;
+    const {name,doctor,phone,gender,age}=req.body;
 
     try {
 
@@ -16,7 +16,9 @@ module.exports.register= async function(req,res){
                 name,
                 phone,
                 doctor,
-                status
+                gender,
+                age
+                
             })
                     await newUser.save();
                     return res.send(newUser)
@@ -29,3 +31,6 @@ module.exports.register= async function(req,res){
     }
 
 }
+
+
+
