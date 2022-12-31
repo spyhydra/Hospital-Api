@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
-
-mongoose.connect("mongodb://localhost/Hospital-api")
+const mongodb=require('mongodb')
+mongoose.connect("mongodb+srv://chetanpatil:UUFdVc8BYbkXwUMp@cluster0.rq2kmiy.mongodb.net/?retryWrites=true&w=majority")
 
 const db=mongoose.connection;
 

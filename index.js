@@ -1,7 +1,7 @@
 const { log } = require('console');
 const express=require('express');
 const app =express();
-const port=80;
+const port=8080;
 const db=require('./config/mongoose');
 const passportJWT=require('./config/passport-JWT');
 const passport=require('passport')
