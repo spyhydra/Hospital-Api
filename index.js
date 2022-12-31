@@ -5,13 +5,13 @@ const port=80;
 const db=require('./config/mongoose');
 const passportJWT=require('./config/passport-JWT');
 const passport=require('passport')
-
+const Patients = require('./models/patients');
 
 
 app.use(express.urlencoded());
 
-
-app.use('/', require('./routes'));
+const indexRoutes = require('./routes/index')
+app.use('/',indexRoutes);
 
 
 

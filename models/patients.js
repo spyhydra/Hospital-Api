@@ -8,13 +8,6 @@ const userSchema= new mongoose.Schema({
         require:true
         
     },
-
-    doctor:{
-        type:String,
-        require:true
-        
-
-    },
      
     phone:{
         type:Number,
@@ -41,6 +34,4 @@ const userSchema= new mongoose.Schema({
 })
 
 
-const Patients=mongoose.model('Patients',userSchema)
-
-module.exports=Patients;
+module.exports=mongoose.model("Patient",userSchema)

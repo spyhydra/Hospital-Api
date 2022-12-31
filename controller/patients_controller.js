@@ -6,16 +6,15 @@ const Patients = require('../models/patients');
 module.exports.register= async function(req,res){
     console.log("enter in patients");
 
-    const {name,doctor,phone,gender,age}=req.body;
+    const {name,phone,gender,age}=req.body;
 
     try {
 
-        let user=await Patients.findOne({doctor});
+        let user=await Patients.findOne({name});
         if(!user){
             const newUser= new Patients({
                 name,
                 phone,
-                doctor,
                 gender,
                 age
                 

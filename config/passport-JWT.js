@@ -1,12 +1,12 @@
 const passport=require('passport');
-const { ExtractJwt } = require('passport-jwt');
+
 const JWTstrategy=require('passport-jwt').Strategy;
 const extractJWT=require('passport-jwt').ExtractJwt
 const User=require('../models/doctor');
 
 let opts={
  
-    jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken,
+    jwtFromRequest:extractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey: 'qwertyuiomqsdertyhj'
 }
 
