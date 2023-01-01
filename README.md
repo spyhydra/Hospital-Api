@@ -68,5 +68,5 @@ _It facilitates the doctors in:_
 * Connect to mongodb.
 * npm install the required dependencies.
 * Run command: nodemon index.js
-* Go to https://localhost/3000
+* Go to https://localhost:8080/
 * Keep the Postman App handy.
